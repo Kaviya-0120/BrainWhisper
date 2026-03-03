@@ -1,0 +1,36 @@
+# Node
+node_modules/
+dist/
+dist-ssr/
+*.local
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+/backend/.venv/
+/frontend/node_modules/
+venv/
+ENV/
+.env
+.env.local
+.env.*.local
+
+# Database
+data/*.db
+data/*.sqlite
+/backend/data/*.db
+
+# Uploads
+uploads/*
+/backend/uploads/*
+!uploads/.gitkeep
+
+# IDEs
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db

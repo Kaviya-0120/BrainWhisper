@@ -1,0 +1,28 @@
+services:
+  backend:
+    build:
+      context: ./backend
+    environment:
+      - BRAINWHISPER_CORS_ORIGINS=http://localhost:5173
+      - BRAINWHISPER_DB_URL=sqlite:///./data/brainwhisper.db
+      - BRAINWHISPER_JWT_SECRET=change-me
+    volumes:
+      - backend_data:/app/data
+      - backend_uploads:/app/uploads
+    ports:
+      - "8000:8000"
+
+  frontend:
+    build:
+      context: ./frontend
+    environment:
+      - VITE_API_BASE=http://localhost:8000
+    ports:
+      - "5173:80"
+    depends_on:
+      - backend
+
+volumes:
+  backend_data:
+  backend_uploads:
+
