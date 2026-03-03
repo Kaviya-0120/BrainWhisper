@@ -12,8 +12,9 @@ services:
       - key: BRAINWHISPER_JWT_SECRET
         generateValue: true
 
-  - type: static
+  - type: web
     name: brainwhisper-frontend
+    env: static
     plan: free
     rootDir: frontend
     buildCommand: npm install && npm run build
