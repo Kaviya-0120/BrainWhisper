@@ -1,5 +1,6 @@
 const defaultBase = "http://localhost:8000";
-export const apiBase = import.meta.env.VITE_API_BASE || defaultBase;
+const rawBase = import.meta.env.VITE_API_BASE || defaultBase;
+export const apiBase = rawBase.endsWith("/") ? rawBase.slice(0, -1) : rawBase;
 
 async function handle(resp) {
   if (!resp.ok) {
